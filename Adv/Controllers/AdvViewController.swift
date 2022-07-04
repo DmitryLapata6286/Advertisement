@@ -7,8 +7,11 @@
 
 import UIKit
 
-class AdvertisementViewController: UIViewController {
+class AdvViewController: UIViewController {
+
+    @IBOutlet weak var titleLabel: UILabel!
     
+    private var adv = Advertisement()
     
     override func viewDidLoad() {
         super.viewDidLoad()
