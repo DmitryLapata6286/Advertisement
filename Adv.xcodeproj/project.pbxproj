@@ -15,6 +15,7 @@
 		FDD55D25286ED5B100ECB1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD55D23286ED5B100ECB1B5 /* LaunchScreen.storyboard */; };
 		FDD55D3328722BCC00ECB1B5 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD55D3228722BCC00ECB1B5 /* UIView+Ex.swift */; };
 		FDD55D352873071D00ECB1B5 /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD55D342873071D00ECB1B5 /* Advertisement.swift */; };
+		FDD55D3728743E8200ECB1B5 /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD55D3628743E8200ECB1B5 /* AppAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FDD55D26286ED5B100ECB1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDD55D3228722BCC00ECB1B5 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		FDD55D342873071D00ECB1B5 /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
+		FDD55D3628743E8200ECB1B5 /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FDD55D342873071D00ECB1B5 /* Advertisement.swift */,
+				FDD55D3628743E8200ECB1B5 /* AppAlert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				FDD55D1D286ED5AF00ECB1B5 /* AdvViewController.swift in Sources */,
 				FDD55D19286ED5AF00ECB1B5 /* AppDelegate.swift in Sources */,
+				FDD55D3728743E8200ECB1B5 /* AppAlert.swift in Sources */,
 				FDD55D352873071D00ECB1B5 /* Advertisement.swift in Sources */,
 				FDD55D1B286ED5AF00ECB1B5 /* SceneDelegate.swift in Sources */,
 				FDD55D3328722BCC00ECB1B5 /* UIView+Ex.swift in Sources */,
