@@ -8,6 +8,10 @@
 import UIKit
 
 class AdvViewController: UIViewController {
+    // MARK: - Variables
+    
+    var duration: Int = 86400
+    
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,26 +21,38 @@ class AdvViewController: UIViewController {
             timerLabel.superview?.layer.cornerRadius = 10
             timerLabel.textColor = .white
             timerLabel.font.withSize(25)
+            timerLabel.text = duration.secondsToTime()
         }
     }
     @IBOutlet weak var button: UIButton! {
         didSet{
             button.setTitle("Activate", for: .normal)
             button.setTitleColor(.white, for: .normal)
-            button.clipsToBounds = true
             button.setGradientBackground([UIColor(red: 65.0/255.0, green: 69.0/255.0, blue: 152.0/255.0, alpha: 1),
                                           UIColor(red: 234.0/255.0, green: 72.0/255.0, blue: 187.0/255.0, alpha: 1)], startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
             button.layer.cornerRadius = 10
+            button.clipsToBounds = true
+//          TODO: - Add container view for shadow
+//            button.layer.shadowColor = UIColor(red: 234.0/255.0, green: 72.0/255.0, blue: 187.0/255.0, alpha: 1).cgColor
+//            button.layer.shadowRadius = 8
+//            button.layer.shadowOpacity = 0.8
+//            button.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+//
+//            let cgPath = UIBezierPath(roundedRect: button.bounds, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+//            button.layer.shadowPath = cgPath
+            
         }
     }
 
     
-    lazy var adv = Advertisement(saleDuration: 86400)
+    lazy var adv = Advertisement(saleDuration: duration)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.timerLabel.text = adv.timerLabelInfo
+        adv.changedTextClosure = {text in
+            self.timerLabel.text = text
+        }
     }
 
     //MARK: - Actions
@@ -53,7 +69,7 @@ class AdvViewController: UIViewController {
 
             
  
-        adv.stopTimer()
+        adv.timer?.invalidate()
     }
     
     @objc func alertControllerBackgroundTapped()

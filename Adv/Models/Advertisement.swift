@@ -11,6 +11,7 @@ class Advertisement {
     var saleDuration: Int
     var timer: Timer?
     public var timerLabelInfo: String = ""
+    var changedTextClosure: ((String) -> Void)?
 
     init (saleDuration: Int) {
         self.saleDuration = saleDuration
@@ -26,13 +27,10 @@ class Advertisement {
     @objc func updateTime() {
         saleDuration -= 1
 
-        let days = saleDuration / 86400
-        let hours = saleDuration / 3600
-        let minutes = saleDuration / 60 % 60
-        let seconds = saleDuration % 60
-
-        timerLabelInfo = String(format:"%02d:%02d:%02d:%02d", days, hours, minutes, seconds)
+        timerLabelInfo = saleDuration.secondsToTime()
         print(timerLabelInfo)
+        changedTextClosure?(timerLabelInfo)
+        
 
         stopTimer()
     }
